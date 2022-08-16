@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 geom_jjpie | The documentation of jjPlot package</title>
+  <meta name="description" content="This is a detailed documentation of jjPlot package and more paramenters examples." />
+  <meta name="generator" content="bookdown 0.27.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 geom_jjpie | The documentation of jjPlot package" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a detailed documentation of jjPlot package and more paramenters examples." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 geom_jjpie | The documentation of jjPlot package" />
+  
+  <meta name="twitter:description" content="This is a detailed documentation of jjPlot package and more paramenters examples." />
+  
+
+<meta name="author" content="Junjun Lao" />
+
+
+<meta name="date" content="2022-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="geom_jjviolin.html"/>
+<link rel="next" href="geom_jjtriangle.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">jjPlot manual documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About Lao Junjun</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#installation"><i class="fa fa-check"></i><b>2.1</b> Installation</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#example"><i class="fa fa-check"></i><b>2.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html"><i class="fa fa-check"></i><b>3</b> geom_jjboxplot</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html#basic-plot"><i class="fa fa-check"></i><b>3.1</b> basic plot</a></li>
+<li class="chapter" data-level="3.2" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html#split-boxplot"><i class="fa fa-check"></i><b>3.2</b> split boxplot</a></li>
+<li class="chapter" data-level="3.3" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html#mached-legend"><i class="fa fa-check"></i><b>3.3</b> mached legend</a></li>
+<li class="chapter" data-level="3.4" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html#mapping-with-type"><i class="fa fa-check"></i><b>3.4</b> mapping with type</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html"><i class="fa fa-check"></i><b>4</b> geom_jjviolin</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#basic-plot-1"><i class="fa fa-check"></i><b>4.1</b> basic plot</a></li>
+<li class="chapter" data-level="4.2" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#split-violin"><i class="fa fa-check"></i><b>4.2</b> split violin</a></li>
+<li class="chapter" data-level="4.3" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#multiple-groups"><i class="fa fa-check"></i><b>4.3</b> multiple groups</a></li>
+<li class="chapter" data-level="4.4" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#mached-legend-1"><i class="fa fa-check"></i><b>4.4</b> mached legend</a></li>
+<li class="chapter" data-level="4.5" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#mapping-with-type-1"><i class="fa fa-check"></i><b>4.5</b> mapping with type</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="geom_jjpie.html"><a href="geom_jjpie.html"><i class="fa fa-check"></i><b>5</b> geom_jjpie</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="geom_jjpie.html"><a href="geom_jjpie.html#basic-usage"><i class="fa fa-check"></i><b>5.1</b> basic usage</a></li>
+<li class="chapter" data-level="5.2" data-path="geom_jjpie.html"><a href="geom_jjpie.html#asymmetric-matrix"><i class="fa fa-check"></i><b>5.2</b> asymmetric matrix</a></li>
+<li class="chapter" data-level="5.3" data-path="geom_jjpie.html"><a href="geom_jjpie.html#example-1"><i class="fa fa-check"></i><b>5.3</b> example</a></li>
+<li class="chapter" data-level="5.4" data-path="geom_jjpie.html"><a href="geom_jjpie.html#limitations"><i class="fa fa-check"></i><b>5.4</b> limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html"><i class="fa fa-check"></i><b>6</b> geom_jjtriangle</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html#right-triangle"><i class="fa fa-check"></i><b>6.1</b> right triangle</a></li>
+<li class="chapter" data-level="6.2" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html#isosceles-triangle"><i class="fa fa-check"></i><b>6.2</b> isosceles triangle</a></li>
+<li class="chapter" data-level="6.3" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html#rect-graph"><i class="fa fa-check"></i><b>6.3</b> rect graph</a></li>
+<li class="chapter" data-level="6.4" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html#examples"><i class="fa fa-check"></i><b>6.4</b> examples</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The documentation of jjPlot package</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="geom_jjpie" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> geom_jjpie<a href="geom_jjpie.html#geom_jjpie" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>geom_jjpie</strong> can be used to visualize a single value on pie chart graph and shows how the ratio of value to the max.</p>
+<p>the following we will illustrate how the <strong>geom_jjpie</strong> works.</p>
+<div id="basic-usage" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> basic usage<a href="geom_jjpie.html#basic-usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>we first prepare a correlation matrix data:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="geom_jjpie.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb43-2"><a href="geom_jjpie.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jjPlot)</span>
+<span id="cb43-3"><a href="geom_jjpie.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb43-4"><a href="geom_jjpie.html#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="geom_jjpie.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># test</span></span>
+<span id="cb43-6"><a href="geom_jjpie.html#cb43-6" aria-hidden="true" tabindex="-1"></a>cor_data <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars) <span class="sc">%&gt;%</span></span>
+<span id="cb43-7"><a href="geom_jjpie.html#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb43-8"><a href="geom_jjpie.html#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb43-9"><a href="geom_jjpie.html#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">melt</span>(.,<span class="at">id.vars =</span> <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<p>the <strong>geom_jjpie</strong> need three mapping variables at least: <strong>x</strong>, <strong>y</strong>, <strong>piefill</strong>:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="geom_jjpie.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb44-2"><a href="geom_jjpie.html#cb44-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable)) <span class="sc">+</span></span>
+<span id="cb44-3"><a href="geom_jjpie.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value)) <span class="sc">+</span></span>
+<span id="cb44-4"><a href="geom_jjpie.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/56.png" style="width:100.0%" /></p>
+<p>we can give a specified <strong>pie.theta</strong>:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="geom_jjpie.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb45-2"><a href="geom_jjpie.html#cb45-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable)) <span class="sc">+</span></span>
+<span id="cb45-3"><a href="geom_jjpie.html#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb45-4"><a href="geom_jjpie.html#cb45-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">pie.theta =</span> <span class="dv">120</span>) <span class="sc">+</span></span>
+<span id="cb45-5"><a href="geom_jjpie.html#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/42.png" style="width:100.0%" /></p>
+<p>using correlation value as filled color:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="geom_jjpie.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb46-2"><a href="geom_jjpie.html#cb46-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb46-3"><a href="geom_jjpie.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb46-4"><a href="geom_jjpie.html#cb46-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">pie.theta =</span> <span class="dv">120</span>) <span class="sc">+</span></span>
+<span id="cb46-5"><a href="geom_jjpie.html#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/43.png" style="width:100.0%" /></p>
+<p>you can also <strong>change the pie degree</strong> and <strong>add rect background</strong>:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="geom_jjpie.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb47-2"><a href="geom_jjpie.html#cb47-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb47-3"><a href="geom_jjpie.html#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb47-4"><a href="geom_jjpie.html#cb47-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">pie.theta =</span> <span class="dv">270</span>,</span>
+<span id="cb47-5"><a href="geom_jjpie.html#cb47-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">add.rect =</span> T) <span class="sc">+</span></span>
+<span id="cb47-6"><a href="geom_jjpie.html#cb47-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/44.png" style="width:100.0%" /></p>
+<p><strong>remove circle background</strong>:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="geom_jjpie.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb48-2"><a href="geom_jjpie.html#cb48-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb48-3"><a href="geom_jjpie.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb48-4"><a href="geom_jjpie.html#cb48-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">pie.theta =</span> <span class="dv">90</span>,</span>
+<span id="cb48-5"><a href="geom_jjpie.html#cb48-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">add.rect =</span> T,</span>
+<span id="cb48-6"><a href="geom_jjpie.html#cb48-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">add.circle =</span> F) <span class="sc">+</span></span>
+<span id="cb48-7"><a href="geom_jjpie.html#cb48-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/45.png" style="width:100.0%" /></p>
+<p>if you do not define your <strong>pie.theta</strong>, <strong>the pie degree will be calculated automatically acorrding to the piefill</strong>:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="geom_jjpie.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb49-2"><a href="geom_jjpie.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb49-3"><a href="geom_jjpie.html#cb49-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb49-4"><a href="geom_jjpie.html#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value)) <span class="sc">+</span></span>
+<span id="cb49-5"><a href="geom_jjpie.html#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> <span class="fu">brewer.pal</span>(<span class="dv">11</span>, <span class="st">&quot;RdYlBu&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb49-6"><a href="geom_jjpie.html#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/46.png" style="width:100.0%" /></p>
+<p>you can change the circle background fill color:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="geom_jjpie.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb50-2"><a href="geom_jjpie.html#cb50-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb50-3"><a href="geom_jjpie.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb50-4"><a href="geom_jjpie.html#cb50-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">circle.fill =</span> <span class="st">&#39;#009933&#39;</span>) <span class="sc">+</span></span>
+<span id="cb50-5"><a href="geom_jjpie.html#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> <span class="fu">brewer.pal</span>(<span class="dv">11</span>, <span class="st">&quot;RdYlBu&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb50-6"><a href="geom_jjpie.html#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/47.png" style="width:100.0%" /></p>
+<p>add a second circle to make a hollow pie:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="geom_jjpie.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb51-2"><a href="geom_jjpie.html#cb51-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb51-3"><a href="geom_jjpie.html#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb51-4"><a href="geom_jjpie.html#cb51-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">circle.fill =</span> <span class="st">&#39;#009933&#39;</span>,</span>
+<span id="cb51-5"><a href="geom_jjpie.html#cb51-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">circle.radius =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb51-6"><a href="geom_jjpie.html#cb51-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> <span class="fu">brewer.pal</span>(<span class="dv">11</span>, <span class="st">&quot;RdYlBu&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb51-7"><a href="geom_jjpie.html#cb51-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/48.png" style="width:100.0%" /></p>
+<p>change the second circle fill color:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="geom_jjpie.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data,</span>
+<span id="cb52-2"><a href="geom_jjpie.html#cb52-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb52-3"><a href="geom_jjpie.html#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb52-4"><a href="geom_jjpie.html#cb52-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">circle.fill =</span> <span class="st">&#39;#009933&#39;</span>,</span>
+<span id="cb52-5"><a href="geom_jjpie.html#cb52-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">circle.radius =</span> <span class="dv">1</span>,</span>
+<span id="cb52-6"><a href="geom_jjpie.html#cb52-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">hollow.fill =</span> <span class="st">&#39;grey90&#39;</span>) <span class="sc">+</span></span>
+<span id="cb52-7"><a href="geom_jjpie.html#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> <span class="fu">brewer.pal</span>(<span class="dv">11</span>, <span class="st">&quot;RdYlBu&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb52-8"><a href="geom_jjpie.html#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/49.png" style="width:100.0%" /></p>
+</div>
+<div id="asymmetric-matrix" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> asymmetric matrix<a href="geom_jjpie.html#asymmetric-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>geom_jjpie</strong> also can be used to asymmetric matrix.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="geom_jjpie.html#cb53-1" aria-hidden="true" tabindex="-1"></a>cor_data1 <span class="ot">&lt;-</span> cor_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(variable <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;mpg&#39;</span>,<span class="st">&#39;cyl&#39;</span>,<span class="st">&#39;disp&#39;</span>,<span class="st">&#39;hp&#39;</span>))</span>
+<span id="cb53-2"><a href="geom_jjpie.html#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="geom_jjpie.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data1,</span>
+<span id="cb53-4"><a href="geom_jjpie.html#cb53-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb53-5"><a href="geom_jjpie.html#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb53-6"><a href="geom_jjpie.html#cb53-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb53-7"><a href="geom_jjpie.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/50.png" style="width:100.0%" /></p>
+<p>add rect:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="geom_jjpie.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data1,</span>
+<span id="cb54-2"><a href="geom_jjpie.html#cb54-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb54-3"><a href="geom_jjpie.html#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb54-4"><a href="geom_jjpie.html#cb54-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> <span class="dv">1</span>,</span>
+<span id="cb54-5"><a href="geom_jjpie.html#cb54-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">add.rect =</span> T) <span class="sc">+</span></span>
+<span id="cb54-6"><a href="geom_jjpie.html#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/51.png" style="width:100.0%" /></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="geom_jjpie.html#cb55-1" aria-hidden="true" tabindex="-1"></a>cor_data2 <span class="ot">&lt;-</span> cor_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;mpg&#39;</span>,<span class="st">&#39;cyl&#39;</span>,<span class="st">&#39;disp&#39;</span>))</span>
+<span id="cb55-2"><a href="geom_jjpie.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="geom_jjpie.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_data2,</span>
+<span id="cb55-4"><a href="geom_jjpie.html#cb55-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb55-5"><a href="geom_jjpie.html#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb55-6"><a href="geom_jjpie.html#cb55-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb55-7"><a href="geom_jjpie.html#cb55-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/52.png" style="width:100.0%" /></p>
+</div>
+<div id="example-1" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> example<a href="geom_jjpie.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>here we show an example:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="geom_jjpie.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
+<span id="cb56-2"><a href="geom_jjpie.html#cb56-2" aria-hidden="true" tabindex="-1"></a>dot_data <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">&#39;gene-dot.txt&#39;</span>,<span class="at">header =</span> T) <span class="sc">%&gt;%</span></span>
+<span id="cb56-3"><a href="geom_jjpie.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(class)</span>
+<span id="cb56-4"><a href="geom_jjpie.html#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="geom_jjpie.html#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co"># check</span></span>
+<span id="cb56-6"><a href="geom_jjpie.html#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dot_data,<span class="dv">3</span>)</span>
+<span id="cb56-7"><a href="geom_jjpie.html#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         cell  gene                  class mean.expression percentage</span></span>
+<span id="cb56-8"><a href="geom_jjpie.html#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 1b CoelEpi GATA4 DMRT1 Early supporting       0.3749122   36.03614</span></span>
+<span id="cb56-9"><a href="geom_jjpie.html#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2 1b CoelEpi GATA4  CPA2 Early supporting       0.7495705   95.82235</span></span>
+<span id="cb56-10"><a href="geom_jjpie.html#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3 1b CoelEpi GATA4 GPR37 Early supporting       0.1604790   95.79420</span></span>
+<span id="cb56-11"><a href="geom_jjpie.html#cb56-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-12"><a href="geom_jjpie.html#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="co"># colnames</span></span>
+<span id="cb56-13"><a href="geom_jjpie.html#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dot_data)</span>
+<span id="cb56-14"><a href="geom_jjpie.html#cb56-14" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] &quot;cell&quot;    &quot;gene&quot;   &quot;class&quot;    &quot;mean.expression&quot; &quot;percentage&quot;</span></span>
+<span id="cb56-15"><a href="geom_jjpie.html#cb56-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-16"><a href="geom_jjpie.html#cb56-16" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(dot_data<span class="sc">$</span>cell)</span>
+<span id="cb56-17"><a href="geom_jjpie.html#cb56-17" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] &quot;1b CoelEpi GATA4&quot; &quot;2a Early somatic&quot; &quot;2b ESGC male&quot;     &quot;2b ESGC female&quot;</span></span>
+<span id="cb56-18"><a href="geom_jjpie.html#cb56-18" aria-hidden="true" tabindex="-1"></a><span class="co"># [5] &quot;2c PreGC-I&quot;       &quot;2d Sertoil&quot;       &quot;3a Early sPAX8&quot;   &quot;3b Gi&quot;</span></span>
+<span id="cb56-19"><a href="geom_jjpie.html#cb56-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-20"><a href="geom_jjpie.html#cb56-20" aria-hidden="true" tabindex="-1"></a><span class="co"># add cell group</span></span>
+<span id="cb56-21"><a href="geom_jjpie.html#cb56-21" aria-hidden="true" tabindex="-1"></a>dot_data<span class="sc">$</span>cellGroup <span class="ot">&lt;-</span> <span class="fu">case_when</span>(</span>
+<span id="cb56-22"><a href="geom_jjpie.html#cb56-22" aria-hidden="true" tabindex="-1"></a>  dot_data<span class="sc">$</span>cell <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;1b CoelEpi GATA4&quot;</span>, <span class="st">&quot;2a Early somatic&quot;</span>, <span class="st">&quot;2b ESGC male&quot;</span>) <span class="sc">~</span> <span class="st">&quot;cell type1&quot;</span>,</span>
+<span id="cb56-23"><a href="geom_jjpie.html#cb56-23" aria-hidden="true" tabindex="-1"></a>  dot_data<span class="sc">$</span>cell <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;2b ESGC female&quot;</span>, <span class="st">&quot;2c PreGC-I&quot;</span>, <span class="st">&quot;2d Sertoil&quot;</span>)  <span class="sc">~</span> <span class="st">&quot;cell type2&quot;</span>,</span>
+<span id="cb56-24"><a href="geom_jjpie.html#cb56-24" aria-hidden="true" tabindex="-1"></a>  dot_data<span class="sc">$</span>cell <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;3a Early sPAX8&quot;</span>, <span class="st">&quot;3b Gi&quot;</span>)  <span class="sc">~</span> <span class="st">&quot;cell type3&quot;</span></span>
+<span id="cb56-25"><a href="geom_jjpie.html#cb56-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb56-26"><a href="geom_jjpie.html#cb56-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-27"><a href="geom_jjpie.html#cb56-27" aria-hidden="true" tabindex="-1"></a><span class="co"># order</span></span>
+<span id="cb56-28"><a href="geom_jjpie.html#cb56-28" aria-hidden="true" tabindex="-1"></a>dot_data<span class="sc">$</span>gene <span class="ot">&lt;-</span> <span class="fu">factor</span>(dot_data<span class="sc">$</span>gene,<span class="at">levels =</span> <span class="fu">unique</span>(dot_data<span class="sc">$</span>gene))</span></code></pre></div>
+<p>pie plot:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="geom_jjpie.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb57-2"><a href="geom_jjpie.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dot_data,<span class="fu">aes</span>(<span class="at">x =</span> gene,<span class="at">y =</span> cell,<span class="at">fill =</span> mean.expression)) <span class="sc">+</span></span>
+<span id="cb57-3"><a href="geom_jjpie.html#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> mean.expression),<span class="at">width =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb57-4"><a href="geom_jjpie.html#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&#39;white&#39;</span>,<span class="at">mid =</span> <span class="st">&#39;#EB1D36&#39;</span>,<span class="at">high =</span> <span class="st">&#39;#990000&#39;</span>,</span>
+<span id="cb57-5"><a href="geom_jjpie.html#cb57-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>,</span>
+<span id="cb57-6"><a href="geom_jjpie.html#cb57-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">name =</span> <span class="st">&#39;Mean expression&#39;</span>) <span class="sc">+</span></span>
+<span id="cb57-7"><a href="geom_jjpie.html#cb57-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb57-8"><a href="geom_jjpie.html#cb57-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span></span>
+<span id="cb57-9"><a href="geom_jjpie.html#cb57-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb57-10"><a href="geom_jjpie.html#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/53.png" style="width:100.0%" /></p>
+<p>hollow pie:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="geom_jjpie.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dot_data,<span class="fu">aes</span>(<span class="at">x =</span> gene,<span class="at">y =</span> cell,<span class="at">fill =</span> mean.expression)) <span class="sc">+</span></span>
+<span id="cb58-2"><a href="geom_jjpie.html#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> mean.expression),<span class="at">width =</span> <span class="fl">1.3</span>,</span>
+<span id="cb58-3"><a href="geom_jjpie.html#cb58-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">circle.radius =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="geom_jjpie.html#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&#39;white&#39;</span>,<span class="at">mid =</span> <span class="st">&#39;#EB1D36&#39;</span>,<span class="at">high =</span> <span class="st">&#39;#990000&#39;</span>,</span>
+<span id="cb58-5"><a href="geom_jjpie.html#cb58-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>,</span>
+<span id="cb58-6"><a href="geom_jjpie.html#cb58-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">name =</span> <span class="st">&#39;Mean expression&#39;</span>) <span class="sc">+</span></span>
+<span id="cb58-7"><a href="geom_jjpie.html#cb58-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb58-8"><a href="geom_jjpie.html#cb58-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span></span>
+<span id="cb58-9"><a href="geom_jjpie.html#cb58-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb58-10"><a href="geom_jjpie.html#cb58-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/54.png" style="width:100.0%" /></p>
+<p>add rect:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="geom_jjpie.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dot_data,<span class="fu">aes</span>(<span class="at">x =</span> gene,<span class="at">y =</span> cell,<span class="at">fill =</span> mean.expression)) <span class="sc">+</span></span>
+<span id="cb59-2"><a href="geom_jjpie.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> mean.expression),</span>
+<span id="cb59-3"><a href="geom_jjpie.html#cb59-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> <span class="fl">1.3</span>,</span>
+<span id="cb59-4"><a href="geom_jjpie.html#cb59-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">circle.radius =</span> <span class="dv">1</span>,</span>
+<span id="cb59-5"><a href="geom_jjpie.html#cb59-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">add.rect =</span> T,</span>
+<span id="cb59-6"><a href="geom_jjpie.html#cb59-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">rect.height =</span> <span class="fl">1.5</span>,</span>
+<span id="cb59-7"><a href="geom_jjpie.html#cb59-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">rect.width =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb59-8"><a href="geom_jjpie.html#cb59-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&#39;white&#39;</span>,<span class="at">mid =</span> <span class="st">&#39;#EB1D36&#39;</span>,<span class="at">high =</span> <span class="st">&#39;#990000&#39;</span>,</span>
+<span id="cb59-9"><a href="geom_jjpie.html#cb59-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>,</span>
+<span id="cb59-10"><a href="geom_jjpie.html#cb59-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">name =</span> <span class="st">&#39;Mean expression&#39;</span>) <span class="sc">+</span></span>
+<span id="cb59-11"><a href="geom_jjpie.html#cb59-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb59-12"><a href="geom_jjpie.html#cb59-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span></span>
+<span id="cb59-13"><a href="geom_jjpie.html#cb59-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb59-14"><a href="geom_jjpie.html#cb59-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/55.png" style="width:100.0%" /></p>
+</div>
+<div id="limitations" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> limitations<a href="geom_jjpie.html#limitations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I am not sure the exact relation between y axis range and x axis range and sometimes the pie produced from asymmetric matrix data will be strange. Here you can ajust the <strong>shift</strong> parameter to make the pie look much circular.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="geom_jjpie.html#cb60-1" aria-hidden="true" tabindex="-1"></a>cor_datax <span class="ot">&lt;-</span> cor_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;mpg&#39;</span>,<span class="st">&#39;cyl&#39;</span>,<span class="st">&#39;disp&#39;</span>,<span class="st">&#39;hp&#39;</span>,<span class="st">&quot;drat&quot;</span>, <span class="st">&quot;wt&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb60-2"><a href="geom_jjpie.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(variable <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;mpg&#39;</span>,<span class="st">&#39;cyl&#39;</span>,<span class="st">&#39;disp&#39;</span>))</span>
+<span id="cb60-3"><a href="geom_jjpie.html#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-4"><a href="geom_jjpie.html#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_datax,</span>
+<span id="cb60-5"><a href="geom_jjpie.html#cb60-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb60-6"><a href="geom_jjpie.html#cb60-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value)) <span class="sc">+</span></span>
+<span id="cb60-7"><a href="geom_jjpie.html#cb60-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/57.png" style="width:100.0%" /></p>
+<p>ajust:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="geom_jjpie.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_datax,</span>
+<span id="cb61-2"><a href="geom_jjpie.html#cb61-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> variable,<span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb61-3"><a href="geom_jjpie.html#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjpie</span>(<span class="fu">aes</span>(<span class="at">piefill =</span> value),</span>
+<span id="cb61-4"><a href="geom_jjpie.html#cb61-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">shift =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb61-5"><a href="geom_jjpie.html#cb61-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/58.png" style="width:100.0%" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="geom_jjviolin.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="geom_jjtriangle.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-geom_jjpie.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-jjPlot.pdf", "bookdown-jjPlot.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
