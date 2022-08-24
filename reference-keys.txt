@@ -18,8 +18,15 @@ basic-usage
 asymmetric-matrix
 example-1
 limitations
+geom_jjpie2
+prepare-data
+examples
 geom_jjtriangle
 right-triangle
 isosceles-triangle
 rect-graph
-examples
+examples-1
+geom_jjviomap
+load-test-data
+examples-2
+end
