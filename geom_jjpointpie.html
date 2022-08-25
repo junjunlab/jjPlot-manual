@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 geom_jjPointPie | The documentation of jjPlot package</title>
+  <meta name="description" content="This is a detailed documentation of jjPlot package and more paramenters examples." />
+  <meta name="generator" content="bookdown 0.27.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 geom_jjPointPie | The documentation of jjPlot package" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a detailed documentation of jjPlot package and more paramenters examples." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 geom_jjPointPie | The documentation of jjPlot package" />
+  
+  <meta name="twitter:description" content="This is a detailed documentation of jjPlot package and more paramenters examples." />
+  
+
+<meta name="author" content="Junjun Lao" />
+
+
+<meta name="date" content="2022-08-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="geom_jjviomap.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">jjPlot manual documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About Lao Junjun</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#installation"><i class="fa fa-check"></i><b>2.1</b> Installation</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#example"><i class="fa fa-check"></i><b>2.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html"><i class="fa fa-check"></i><b>3</b> geom_jjboxplot</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html#basic-plot"><i class="fa fa-check"></i><b>3.1</b> basic plot</a></li>
+<li class="chapter" data-level="3.2" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html#split-boxplot"><i class="fa fa-check"></i><b>3.2</b> split boxplot</a></li>
+<li class="chapter" data-level="3.3" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html#mached-legend"><i class="fa fa-check"></i><b>3.3</b> mached legend</a></li>
+<li class="chapter" data-level="3.4" data-path="geom_jjboxplot.html"><a href="geom_jjboxplot.html#mapping-with-type"><i class="fa fa-check"></i><b>3.4</b> mapping with type</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html"><i class="fa fa-check"></i><b>4</b> geom_jjviolin</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#basic-plot-1"><i class="fa fa-check"></i><b>4.1</b> basic plot</a></li>
+<li class="chapter" data-level="4.2" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#split-violin"><i class="fa fa-check"></i><b>4.2</b> split violin</a></li>
+<li class="chapter" data-level="4.3" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#multiple-groups"><i class="fa fa-check"></i><b>4.3</b> multiple groups</a></li>
+<li class="chapter" data-level="4.4" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#mached-legend-1"><i class="fa fa-check"></i><b>4.4</b> mached legend</a></li>
+<li class="chapter" data-level="4.5" data-path="geom_jjviolin.html"><a href="geom_jjviolin.html#mapping-with-type-1"><i class="fa fa-check"></i><b>4.5</b> mapping with type</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="geom_jjpie.html"><a href="geom_jjpie.html"><i class="fa fa-check"></i><b>5</b> geom_jjpie</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="geom_jjpie.html"><a href="geom_jjpie.html#basic-usage"><i class="fa fa-check"></i><b>5.1</b> basic usage</a></li>
+<li class="chapter" data-level="5.2" data-path="geom_jjpie.html"><a href="geom_jjpie.html#asymmetric-matrix"><i class="fa fa-check"></i><b>5.2</b> asymmetric matrix</a></li>
+<li class="chapter" data-level="5.3" data-path="geom_jjpie.html"><a href="geom_jjpie.html#example-1"><i class="fa fa-check"></i><b>5.3</b> example</a></li>
+<li class="chapter" data-level="5.4" data-path="geom_jjpie.html"><a href="geom_jjpie.html#limitations"><i class="fa fa-check"></i><b>5.4</b> limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="geom_jjpie2.html"><a href="geom_jjpie2.html"><i class="fa fa-check"></i><b>6</b> geom_jjpie2</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="geom_jjpie2.html"><a href="geom_jjpie2.html#prepare-data"><i class="fa fa-check"></i><b>6.1</b> prepare data</a></li>
+<li class="chapter" data-level="6.2" data-path="geom_jjpie2.html"><a href="geom_jjpie2.html#examples"><i class="fa fa-check"></i><b>6.2</b> examples</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html"><i class="fa fa-check"></i><b>7</b> geom_jjtriangle</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html#right-triangle"><i class="fa fa-check"></i><b>7.1</b> right triangle</a></li>
+<li class="chapter" data-level="7.2" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html#isosceles-triangle"><i class="fa fa-check"></i><b>7.2</b> isosceles triangle</a></li>
+<li class="chapter" data-level="7.3" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html#rect-graph"><i class="fa fa-check"></i><b>7.3</b> rect graph</a></li>
+<li class="chapter" data-level="7.4" data-path="geom_jjtriangle.html"><a href="geom_jjtriangle.html#examples-1"><i class="fa fa-check"></i><b>7.4</b> examples</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="geom_jjviomap.html"><a href="geom_jjviomap.html"><i class="fa fa-check"></i><b>8</b> geom_jjviomap</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="geom_jjviomap.html"><a href="geom_jjviomap.html#load-test-data"><i class="fa fa-check"></i><b>8.1</b> load test data</a></li>
+<li class="chapter" data-level="8.2" data-path="geom_jjviomap.html"><a href="geom_jjviomap.html#examples-2"><i class="fa fa-check"></i><b>8.2</b> examples</a></li>
+<li class="chapter" data-level="8.3" data-path="geom_jjviomap.html"><a href="geom_jjviomap.html#end"><i class="fa fa-check"></i><b>8.3</b> end</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html"><i class="fa fa-check"></i><b>9</b> geom_jjPointPie</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#introduction"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#installation-1"><i class="fa fa-check"></i><b>9.2</b> Installation</a></li>
+<li class="chapter" data-level="9.3" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#prepare-data-1"><i class="fa fa-check"></i><b>9.3</b> Prepare data</a></li>
+<li class="chapter" data-level="9.4" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#examples-3"><i class="fa fa-check"></i><b>9.4</b> Examples</a></li>
+<li class="chapter" data-level="9.5" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#annotation"><i class="fa fa-check"></i><b>9.5</b> Annotation</a></li>
+<li class="chapter" data-level="9.6" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#end-1"><i class="fa fa-check"></i><b>9.6</b> End</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The documentation of jjPlot package</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="geom_jjpointpie" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> geom_jjPointPie<a href="geom_jjpointpie.html#geom_jjpointpie" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Introduction<a href="geom_jjpointpie.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To better display the <strong>relative ratio of different element in multiple groups</strong>, here supply a <strong>jjPointPie</strong> geom function to <strong>draw multiple pies in graph</strong> in a convenient way.</p>
+</div>
+<div id="installation-1" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Installation<a href="geom_jjpointpie.html#installation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Re-install it to gain new features:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="geom_jjpointpie.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</span>
+<span id="cb84-2"><a href="geom_jjpointpie.html#cb84-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;junjunlab/jjPlot&#39;</span>)</span></code></pre></div>
+</div>
+<div id="prepare-data-1" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Prepare data<a href="geom_jjpointpie.html#prepare-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="geom_jjpointpie.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb85-2"><a href="geom_jjpointpie.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jjPlot)</span>
+<span id="cb85-3"><a href="geom_jjpointpie.html#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="geom_jjpointpie.html#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="co"># prepare test</span></span>
+<span id="cb85-5"><a href="geom_jjpointpie.html#cb85-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb85-6"><a href="geom_jjpointpie.html#cb85-6" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gene =</span> <span class="fu">rep</span>(LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>],<span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb85-7"><a href="geom_jjpointpie.html#cb85-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">id =</span> <span class="fu">rep</span>(<span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>),<span class="dv">5</span>),</span>
+<span id="cb85-8"><a href="geom_jjpointpie.html#cb85-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">group =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
+<span id="cb85-9"><a href="geom_jjpointpie.html#cb85-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">r =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="fl">1.6</span>),<span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb85-10"><a href="geom_jjpointpie.html#cb85-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">s1 =</span> <span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>,<span class="at">sd =</span> <span class="dv">10</span>)),</span>
+<span id="cb85-11"><a href="geom_jjpointpie.html#cb85-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">s2 =</span> <span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>,<span class="at">sd =</span> <span class="dv">10</span>)),</span>
+<span id="cb85-12"><a href="geom_jjpointpie.html#cb85-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">s3 =</span> <span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>,<span class="at">sd =</span> <span class="dv">10</span>)))</span>
+<span id="cb85-13"><a href="geom_jjpointpie.html#cb85-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-14"><a href="geom_jjpointpie.html#cb85-14" aria-hidden="true" tabindex="-1"></a><span class="co"># check</span></span>
+<span id="cb85-15"><a href="geom_jjpointpie.html#cb85-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(test,<span class="dv">3</span>)</span>
+<span id="cb85-16"><a href="geom_jjpointpie.html#cb85-16" aria-hidden="true" tabindex="-1"></a><span class="co">#   gene id group   r        s1        s2       s3</span></span>
+<span id="cb85-17"><a href="geom_jjpointpie.html#cb85-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 1    A  1     1 0.4  5.604756 2.5331851 7.104066</span></span>
+<span id="cb85-18"><a href="geom_jjpointpie.html#cb85-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 2    A  2     2 0.4  2.301775 0.2854676 2.568837</span></span>
+<span id="cb85-19"><a href="geom_jjpointpie.html#cb85-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 3    A  3     3 0.4 15.587083 0.4287046 2.466919</span></span>
+<span id="cb85-20"><a href="geom_jjpointpie.html#cb85-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-21"><a href="geom_jjpointpie.html#cb85-21" aria-hidden="true" tabindex="-1"></a><span class="co"># widte to long</span></span>
+<span id="cb85-22"><a href="geom_jjpointpie.html#cb85-22" aria-hidden="true" tabindex="-1"></a>df.long <span class="ot">&lt;-</span> reshape2<span class="sc">::</span><span class="fu">melt</span>(test,<span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">&#39;gene&#39;</span>,<span class="st">&#39;id&#39;</span>,<span class="st">&#39;group&#39;</span>,<span class="st">&#39;r&#39;</span>),</span>
+<span id="cb85-23"><a href="geom_jjpointpie.html#cb85-23" aria-hidden="true" tabindex="-1"></a>                          <span class="at">variable.name =</span> <span class="st">&#39;type&#39;</span>,<span class="at">value.name =</span> <span class="st">&#39;per&#39;</span>)</span>
+<span id="cb85-24"><a href="geom_jjpointpie.html#cb85-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-25"><a href="geom_jjpointpie.html#cb85-25" aria-hidden="true" tabindex="-1"></a><span class="co"># check</span></span>
+<span id="cb85-26"><a href="geom_jjpointpie.html#cb85-26" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df.long,<span class="dv">3</span>)</span>
+<span id="cb85-27"><a href="geom_jjpointpie.html#cb85-27" aria-hidden="true" tabindex="-1"></a><span class="co">#   gene id group   r type       per</span></span>
+<span id="cb85-28"><a href="geom_jjpointpie.html#cb85-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 1    A  1     1 0.4   s1  5.604756</span></span>
+<span id="cb85-29"><a href="geom_jjpointpie.html#cb85-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 2    A  2     2 0.4   s1  2.301775</span></span>
+<span id="cb85-30"><a href="geom_jjpointpie.html#cb85-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 3    A  3     3 0.4   s1 15.587083</span></span></code></pre></div>
+</div>
+<div id="examples-3" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Examples<a href="geom_jjpointpie.html#examples-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Defalut plot, you should define the <strong>group</strong>, the relative ratio will be calculated automaticlly:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="geom_jjpointpie.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># default</span></span>
+<span id="cb86-2"><a href="geom_jjpointpie.html#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb86-3"><a href="geom_jjpointpie.html#cb86-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per)) <span class="sc">+</span></span>
+<span id="cb86-4"><a href="geom_jjpointpie.html#cb86-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/77.png" style="width:100.0%" /></p>
+<p>Mapping with type:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="geom_jjpointpie.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mapping with type</span></span>
+<span id="cb87-2"><a href="geom_jjpointpie.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb87-3"><a href="geom_jjpointpie.html#cb87-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb87-4"><a href="geom_jjpointpie.html#cb87-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb87-5"><a href="geom_jjpointpie.html#cb87-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/78.png" style="width:100.0%" /></p>
+<p>We can add a circle on it:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="geom_jjpointpie.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add circle</span></span>
+<span id="cb88-2"><a href="geom_jjpointpie.html#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb88-3"><a href="geom_jjpointpie.html#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb88-4"><a href="geom_jjpointpie.html#cb88-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type),</span>
+<span id="cb88-5"><a href="geom_jjpointpie.html#cb88-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">add.circle =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb88-6"><a href="geom_jjpointpie.html#cb88-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">circle.radius =</span> <span class="fl">0.07</span>) <span class="sc">+</span></span>
+<span id="cb88-7"><a href="geom_jjpointpie.html#cb88-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/80.png" style="width:100.0%" /></p>
+<p>Or make a hollow circle pie:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="geom_jjpointpie.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make hollow circle</span></span>
+<span id="cb89-2"><a href="geom_jjpointpie.html#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb89-3"><a href="geom_jjpointpie.html#cb89-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb89-4"><a href="geom_jjpointpie.html#cb89-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type),</span>
+<span id="cb89-5"><a href="geom_jjpointpie.html#cb89-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">add.circle =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb89-6"><a href="geom_jjpointpie.html#cb89-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">circle.rev =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb89-7"><a href="geom_jjpointpie.html#cb89-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">circle.radius =</span> <span class="fl">0.03</span>,</span>
+<span id="cb89-8"><a href="geom_jjpointpie.html#cb89-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">circle.fill =</span> <span class="st">&#39;grey90&#39;</span>) <span class="sc">+</span></span>
+<span id="cb89-9"><a href="geom_jjpointpie.html#cb89-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/81.png" style="width:100.0%" /></p>
+<p>You can also <strong>specify a group name to be seprated from the pie</strong>:</p>
+<pre><code># seprate part of pie
+ggplot(df.long,aes(x = id,y = gene,group = group)) +
+  geom_jjPointPie(aes(pievar = per,
+                      fill = type,
+                      filltype = type),
+                  explode = &quot;s1&quot;) +
+  coord_fixed()</code></pre>
+<p><img src="local_images/82.png" style="width:100.0%" /></p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="geom_jjpointpie.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># seprate part of pie</span></span>
+<span id="cb91-2"><a href="geom_jjpointpie.html#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb91-3"><a href="geom_jjpointpie.html#cb91-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb91-4"><a href="geom_jjpointpie.html#cb91-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type,</span>
+<span id="cb91-5"><a href="geom_jjpointpie.html#cb91-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">filltype =</span> type),</span>
+<span id="cb91-6"><a href="geom_jjpointpie.html#cb91-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">explode =</span> <span class="st">&quot;s3&quot;</span>) <span class="sc">+</span></span>
+<span id="cb91-7"><a href="geom_jjpointpie.html#cb91-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/83.png" style="width:100.0%" /></p>
+<p>Seprate all parts which looks like <strong>chapped pie</strong>:</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="geom_jjpointpie.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># seprate all</span></span>
+<span id="cb92-2"><a href="geom_jjpointpie.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb92-3"><a href="geom_jjpointpie.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb92-4"><a href="geom_jjpointpie.html#cb92-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type,</span>
+<span id="cb92-5"><a href="geom_jjpointpie.html#cb92-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">filltype =</span> type,</span>
+<span id="cb92-6"><a href="geom_jjpointpie.html#cb92-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">explode =</span> type)) <span class="sc">+</span></span>
+<span id="cb92-7"><a href="geom_jjpointpie.html#cb92-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/84.png" style="width:100.0%" /></p>
+<p>Ajust the distance:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="geom_jjpointpie.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ajust dist</span></span>
+<span id="cb93-2"><a href="geom_jjpointpie.html#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb93-3"><a href="geom_jjpointpie.html#cb93-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb93-4"><a href="geom_jjpointpie.html#cb93-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type,</span>
+<span id="cb93-5"><a href="geom_jjpointpie.html#cb93-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">filltype =</span> type),</span>
+<span id="cb93-6"><a href="geom_jjpointpie.html#cb93-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">explode =</span> <span class="st">&quot;s1&quot;</span>,</span>
+<span id="cb93-7"><a href="geom_jjpointpie.html#cb93-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">explode.dist =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb93-8"><a href="geom_jjpointpie.html#cb93-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/85.png" style="width:100.0%" /></p>
+<p>Change filled color:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="geom_jjpointpie.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change fill color</span></span>
+<span id="cb94-2"><a href="geom_jjpointpie.html#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb94-3"><a href="geom_jjpointpie.html#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb94-4"><a href="geom_jjpointpie.html#cb94-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type,</span>
+<span id="cb94-5"><a href="geom_jjpointpie.html#cb94-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">filltype =</span> type),</span>
+<span id="cb94-6"><a href="geom_jjpointpie.html#cb94-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">explode =</span> <span class="st">&quot;s1&quot;</span>,</span>
+<span id="cb94-7"><a href="geom_jjpointpie.html#cb94-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">explode.dist =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb94-8"><a href="geom_jjpointpie.html#cb94-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb94-9"><a href="geom_jjpointpie.html#cb94-9" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_npg</span>()</span></code></pre></div>
+<p><img src="local_images/86.png" style="width:100.0%" /></p>
+<p>Ajust width and color:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="geom_jjpointpie.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ajust width and color</span></span>
+<span id="cb95-2"><a href="geom_jjpointpie.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb95-3"><a href="geom_jjpointpie.html#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb95-4"><a href="geom_jjpointpie.html#cb95-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type),</span>
+<span id="cb95-5"><a href="geom_jjpointpie.html#cb95-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">1.5</span>,</span>
+<span id="cb95-6"><a href="geom_jjpointpie.html#cb95-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb95-7"><a href="geom_jjpointpie.html#cb95-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">line.size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb95-8"><a href="geom_jjpointpie.html#cb95-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb95-9"><a href="geom_jjpointpie.html#cb95-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb95-10"><a href="geom_jjpointpie.html#cb95-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb95-11"><a href="geom_jjpointpie.html#cb95-11" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_npg</span>()</span></code></pre></div>
+<p><img src="local_images/87.png" style="width:100.0%" /></p>
+<p>Add rect background:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="geom_jjpointpie.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add rect background</span></span>
+<span id="cb96-2"><a href="geom_jjpointpie.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb96-3"><a href="geom_jjpointpie.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb96-4"><a href="geom_jjpointpie.html#cb96-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type),</span>
+<span id="cb96-5"><a href="geom_jjpointpie.html#cb96-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">1.5</span>,</span>
+<span id="cb96-6"><a href="geom_jjpointpie.html#cb96-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb96-7"><a href="geom_jjpointpie.html#cb96-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">line.size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb96-8"><a href="geom_jjpointpie.html#cb96-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">fill =</span> <span class="cn">NA</span>,<span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb96-9"><a href="geom_jjpointpie.html#cb96-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb96-10"><a href="geom_jjpointpie.html#cb96-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb96-11"><a href="geom_jjpointpie.html#cb96-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb96-12"><a href="geom_jjpointpie.html#cb96-12" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_npg</span>()</span></code></pre></div>
+<p><img src="local_images/88.png" style="width:100.0%" /></p>
+<p>Mapping with width:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="geom_jjpointpie.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mapping with width</span></span>
+<span id="cb97-2"><a href="geom_jjpointpie.html#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb97-3"><a href="geom_jjpointpie.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb97-4"><a href="geom_jjpointpie.html#cb97-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type,</span>
+<span id="cb97-5"><a href="geom_jjpointpie.html#cb97-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">width =</span> r),</span>
+<span id="cb97-6"><a href="geom_jjpointpie.html#cb97-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb97-7"><a href="geom_jjpointpie.html#cb97-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">line.size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb97-8"><a href="geom_jjpointpie.html#cb97-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">fill =</span> <span class="cn">NA</span>,<span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb97-9"><a href="geom_jjpointpie.html#cb97-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb97-10"><a href="geom_jjpointpie.html#cb97-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb97-11"><a href="geom_jjpointpie.html#cb97-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb97-12"><a href="geom_jjpointpie.html#cb97-12" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_npg</span>()</span></code></pre></div>
+<p><img src="local_images/89.png" style="width:100.0%" /></p>
+<p>Add a legend?</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="geom_jjpointpie.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add legend</span></span>
+<span id="cb98-2"><a href="geom_jjpointpie.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb98-3"><a href="geom_jjpointpie.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb98-4"><a href="geom_jjpointpie.html#cb98-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type,</span>
+<span id="cb98-5"><a href="geom_jjpointpie.html#cb98-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">width =</span> r),</span>
+<span id="cb98-6"><a href="geom_jjpointpie.html#cb98-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb98-7"><a href="geom_jjpointpie.html#cb98-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">line.size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb98-8"><a href="geom_jjpointpie.html#cb98-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">fill =</span> <span class="cn">NA</span>,<span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb98-9"><a href="geom_jjpointpie.html#cb98-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb98-10"><a href="geom_jjpointpie.html#cb98-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb98-11"><a href="geom_jjpointpie.html#cb98-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb98-12"><a href="geom_jjpointpie.html#cb98-12" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb98-13"><a href="geom_jjpointpie.html#cb98-13" aria-hidden="true" tabindex="-1"></a>  scatterpie<span class="sc">::</span><span class="fu">geom_scatterpie_legend</span>(df.long<span class="sc">$</span>r<span class="sc">/</span><span class="dv">10</span>,</span>
+<span id="cb98-14"><a href="geom_jjpointpie.html#cb98-14" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">x =</span> <span class="dv">1</span>,<span class="at">y =</span> <span class="fl">5.8</span>,<span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="local_images/90.png" style="width:100.0%" /></p>
+</div>
+<div id="annotation" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Annotation<a href="geom_jjpointpie.html#annotation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can add some annotations using <strong>jjAnno</strong>:</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="geom_jjpointpie.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># =======================================================</span></span>
+<span id="cb99-2"><a href="geom_jjpointpie.html#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jjAnno)</span>
+<span id="cb99-3"><a href="geom_jjpointpie.html#cb99-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-4"><a href="geom_jjpointpie.html#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add groups</span></span>
+<span id="cb99-5"><a href="geom_jjpointpie.html#cb99-5" aria-hidden="true" tabindex="-1"></a>df.long<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="fu">factor</span>(df.long<span class="sc">$</span>id,<span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb99-6"><a href="geom_jjpointpie.html#cb99-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-7"><a href="geom_jjpointpie.html#cb99-7" aria-hidden="true" tabindex="-1"></a>df.long<span class="sc">$</span>group2 <span class="ot">&lt;-</span> <span class="fu">case_when</span>(df.long<span class="sc">$</span>id <span class="sc">%in%</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">~</span> <span class="st">&#39;group 1&#39;</span>,</span>
+<span id="cb99-8"><a href="geom_jjpointpie.html#cb99-8" aria-hidden="true" tabindex="-1"></a>                            df.long<span class="sc">$</span>id <span class="sc">%in%</span> <span class="fu">as.character</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">~</span> <span class="st">&#39;group 2&#39;</span>,</span>
+<span id="cb99-9"><a href="geom_jjpointpie.html#cb99-9" aria-hidden="true" tabindex="-1"></a>                            df.long<span class="sc">$</span>id <span class="sc">%in%</span> <span class="fu">as.character</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">~</span> <span class="st">&#39;group 3&#39;</span>,</span>
+<span id="cb99-10"><a href="geom_jjpointpie.html#cb99-10" aria-hidden="true" tabindex="-1"></a>                            df.long<span class="sc">$</span>id <span class="sc">%in%</span> <span class="fu">as.character</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">8</span>) <span class="sc">~</span> <span class="st">&#39;group 4&#39;</span>,</span>
+<span id="cb99-11"><a href="geom_jjpointpie.html#cb99-11" aria-hidden="true" tabindex="-1"></a>                            df.long<span class="sc">$</span>id <span class="sc">%in%</span> <span class="fu">as.character</span>(<span class="dv">9</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">~</span> <span class="st">&#39;group 5&#39;</span>)</span>
+<span id="cb99-12"><a href="geom_jjpointpie.html#cb99-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-13"><a href="geom_jjpointpie.html#cb99-13" aria-hidden="true" tabindex="-1"></a><span class="co"># basic plot</span></span>
+<span id="cb99-14"><a href="geom_jjpointpie.html#cb99-14" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span></span>
+<span id="cb99-15"><a href="geom_jjpointpie.html#cb99-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb99-16"><a href="geom_jjpointpie.html#cb99-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb99-17"><a href="geom_jjpointpie.html#cb99-17" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type),</span>
+<span id="cb99-18"><a href="geom_jjpointpie.html#cb99-18" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">1.5</span>,</span>
+<span id="cb99-19"><a href="geom_jjpointpie.html#cb99-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb99-20"><a href="geom_jjpointpie.html#cb99-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">line.size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb99-21"><a href="geom_jjpointpie.html#cb99-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">fill =</span> <span class="cn">NA</span>,<span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb99-22"><a href="geom_jjpointpie.html#cb99-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">clip =</span> <span class="st">&#39;off&#39;</span>) <span class="sc">+</span></span>
+<span id="cb99-23"><a href="geom_jjpointpie.html#cb99-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb99-24"><a href="geom_jjpointpie.html#cb99-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb99-25"><a href="geom_jjpointpie.html#cb99-25" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_npg</span>()</span>
+<span id="cb99-26"><a href="geom_jjpointpie.html#cb99-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-27"><a href="geom_jjpointpie.html#cb99-27" aria-hidden="true" tabindex="-1"></a><span class="co"># add anno</span></span>
+<span id="cb99-28"><a href="geom_jjpointpie.html#cb99-28" aria-hidden="true" tabindex="-1"></a><span class="fu">annoSegment</span>(<span class="at">object =</span> p,</span>
+<span id="cb99-29"><a href="geom_jjpointpie.html#cb99-29" aria-hidden="true" tabindex="-1"></a>            <span class="at">annoPos =</span> <span class="st">&#39;top&#39;</span>,</span>
+<span id="cb99-30"><a href="geom_jjpointpie.html#cb99-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">aesGroup =</span> T,</span>
+<span id="cb99-31"><a href="geom_jjpointpie.html#cb99-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">aesGroName =</span> <span class="st">&#39;group2&#39;</span>,</span>
+<span id="cb99-32"><a href="geom_jjpointpie.html#cb99-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">yPosition =</span> <span class="fl">5.8</span>,</span>
+<span id="cb99-33"><a href="geom_jjpointpie.html#cb99-33" aria-hidden="true" tabindex="-1"></a>            <span class="at">segWidth =</span> <span class="fl">0.8</span>,</span>
+<span id="cb99-34"><a href="geom_jjpointpie.html#cb99-34" aria-hidden="true" tabindex="-1"></a>            <span class="at">alpha =</span> <span class="fl">0.6</span>,</span>
+<span id="cb99-35"><a href="geom_jjpointpie.html#cb99-35" aria-hidden="true" tabindex="-1"></a>            <span class="at">addText =</span> T,</span>
+<span id="cb99-36"><a href="geom_jjpointpie.html#cb99-36" aria-hidden="true" tabindex="-1"></a>            <span class="at">textSize =</span> <span class="dv">14</span>)</span></code></pre></div>
+<p><img src="local_images/91.png" style="width:100.0%" /></p>
+</div>
+<div id="end-1" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> End<a href="geom_jjpointpie.html#end-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>More args see:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="geom_jjpointpie.html#cb100-1" aria-hidden="true" tabindex="-1"></a>?geom_jjPointPie</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="geom_jjviomap.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-geom_jjPointPie.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-jjPlot.pdf", "bookdown-jjPlot.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

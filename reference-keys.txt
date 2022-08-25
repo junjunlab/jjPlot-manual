@@ -30,3 +30,10 @@ geom_jjviomap
 load-test-data
 examples-2
 end
+geom_jjpointpie
+introduction
+installation-1
+prepare-data-1
+examples-3
+annotation
+end-1
