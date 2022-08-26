@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 geom_jjPointPie | The documentation of jjPlot package</title>
   <meta name="description" content="This is a detailed documentation of jjPlot package and more paramenters examples." />
-  <meta name="generator" content="bookdown 0.27.2 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 geom_jjPointPie | The documentation of jjPlot package" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Junjun Lao" />
 
 
-<meta name="date" content="2022-08-25" />
+<meta name="date" content="2022-08-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -189,7 +189,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#prepare-data-1"><i class="fa fa-check"></i><b>9.3</b> Prepare data</a></li>
 <li class="chapter" data-level="9.4" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#examples-3"><i class="fa fa-check"></i><b>9.4</b> Examples</a></li>
 <li class="chapter" data-level="9.5" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#annotation"><i class="fa fa-check"></i><b>9.5</b> Annotation</a></li>
-<li class="chapter" data-level="9.6" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#end-1"><i class="fa fa-check"></i><b>9.6</b> End</a></li>
+<li class="chapter" data-level="9.6" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#add-percent-ratio"><i class="fa fa-check"></i><b>9.6</b> Add percent ratio</a></li>
+<li class="chapter" data-level="9.7" data-path="geom_jjpointpie.html"><a href="geom_jjpointpie.html#end-1"><i class="fa fa-check"></i><b>9.7</b> End</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -437,10 +438,85 @@ ggplot(df.long,aes(x = id,y = gene,group = group)) +
 <span id="cb99-36"><a href="geom_jjpointpie.html#cb99-36" aria-hidden="true" tabindex="-1"></a>            <span class="at">textSize =</span> <span class="dv">14</span>)</span></code></pre></div>
 <p><img src="local_images/91.png" style="width:100.0%" /></p>
 </div>
-<div id="end-1" class="section level2 hasAnchor" number="9.6">
-<h2><span class="header-section-number">9.6</span> End<a href="geom_jjpointpie.html#end-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="add-percent-ratio" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Add percent ratio<a href="geom_jjpointpie.html#add-percent-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Add the percent ratio can exactlly show the real data. We can use <strong>add.text = TRUE</strong> to mark the ratio:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="geom_jjpointpie.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prepare test</span></span>
+<span id="cb100-2"><a href="geom_jjpointpie.html#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">124</span>)</span>
+<span id="cb100-3"><a href="geom_jjpointpie.html#cb100-3" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gene =</span> <span class="fu">rep</span>(LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],<span class="at">each =</span> <span class="dv">5</span>),</span>
+<span id="cb100-4"><a href="geom_jjpointpie.html#cb100-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">id =</span> <span class="fu">rep</span>(<span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>),<span class="dv">3</span>),</span>
+<span id="cb100-5"><a href="geom_jjpointpie.html#cb100-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">group =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,</span>
+<span id="cb100-6"><a href="geom_jjpointpie.html#cb100-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">r =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="fl">0.4</span>,<span class="fl">0.8</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="fl">1.6</span>),<span class="at">each =</span> <span class="dv">3</span>),</span>
+<span id="cb100-7"><a href="geom_jjpointpie.html#cb100-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">s1 =</span> <span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="at">sd =</span> <span class="dv">10</span>)),</span>
+<span id="cb100-8"><a href="geom_jjpointpie.html#cb100-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">s2 =</span> <span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="at">sd =</span> <span class="dv">10</span>)),</span>
+<span id="cb100-9"><a href="geom_jjpointpie.html#cb100-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">s3 =</span> <span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">15</span>,<span class="at">sd =</span> <span class="dv">10</span>)))</span>
+<span id="cb100-10"><a href="geom_jjpointpie.html#cb100-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-11"><a href="geom_jjpointpie.html#cb100-11" aria-hidden="true" tabindex="-1"></a><span class="co"># widte to long</span></span>
+<span id="cb100-12"><a href="geom_jjpointpie.html#cb100-12" aria-hidden="true" tabindex="-1"></a>df.long <span class="ot">&lt;-</span> reshape2<span class="sc">::</span><span class="fu">melt</span>(test,<span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">&#39;gene&#39;</span>,<span class="st">&#39;id&#39;</span>,<span class="st">&#39;group&#39;</span>,<span class="st">&#39;r&#39;</span>),</span>
+<span id="cb100-13"><a href="geom_jjpointpie.html#cb100-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">variable.name =</span> <span class="st">&#39;type&#39;</span>,<span class="at">value.name =</span> <span class="st">&#39;per&#39;</span>)</span>
+<span id="cb100-14"><a href="geom_jjpointpie.html#cb100-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-15"><a href="geom_jjpointpie.html#cb100-15" aria-hidden="true" tabindex="-1"></a><span class="co"># add percent</span></span>
+<span id="cb100-16"><a href="geom_jjpointpie.html#cb100-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb100-17"><a href="geom_jjpointpie.html#cb100-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb100-18"><a href="geom_jjpointpie.html#cb100-18" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type),</span>
+<span id="cb100-19"><a href="geom_jjpointpie.html#cb100-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb100-20"><a href="geom_jjpointpie.html#cb100-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">alpha =</span> <span class="fl">0.6</span>,</span>
+<span id="cb100-21"><a href="geom_jjpointpie.html#cb100-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">add.text =</span> T,</span>
+<span id="cb100-22"><a href="geom_jjpointpie.html#cb100-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">text.dist =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb100-23"><a href="geom_jjpointpie.html#cb100-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb100-24"><a href="geom_jjpointpie.html#cb100-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb100-25"><a href="geom_jjpointpie.html#cb100-25" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_d3</span>() <span class="sc">+</span></span>
+<span id="cb100-26"><a href="geom_jjpointpie.html#cb100-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/92.png" style="width:100.0%" /></p>
+<p>You can change <strong>text size and angle</strong>:</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="geom_jjpointpie.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change text size and angle</span></span>
+<span id="cb101-2"><a href="geom_jjpointpie.html#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb101-3"><a href="geom_jjpointpie.html#cb101-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb101-4"><a href="geom_jjpointpie.html#cb101-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type),</span>
+<span id="cb101-5"><a href="geom_jjpointpie.html#cb101-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb101-6"><a href="geom_jjpointpie.html#cb101-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">add.text =</span> T,</span>
+<span id="cb101-7"><a href="geom_jjpointpie.html#cb101-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">text.dist =</span> <span class="fl">0.6</span>,</span>
+<span id="cb101-8"><a href="geom_jjpointpie.html#cb101-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">text.size =</span> <span class="fl">3.5</span>,<span class="at">text.rot =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
+<span id="cb101-9"><a href="geom_jjpointpie.html#cb101-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb101-10"><a href="geom_jjpointpie.html#cb101-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb101-11"><a href="geom_jjpointpie.html#cb101-11" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_d3</span>() <span class="sc">+</span></span>
+<span id="cb101-12"><a href="geom_jjpointpie.html#cb101-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/93.png" style="width:100.0%" /></p>
+<p>Specify the <strong>digits</strong> to be retained:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="geom_jjpointpie.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retain percent digit</span></span>
+<span id="cb102-2"><a href="geom_jjpointpie.html#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb102-3"><a href="geom_jjpointpie.html#cb102-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb102-4"><a href="geom_jjpointpie.html#cb102-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type),</span>
+<span id="cb102-5"><a href="geom_jjpointpie.html#cb102-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb102-6"><a href="geom_jjpointpie.html#cb102-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">add.text =</span> T,</span>
+<span id="cb102-7"><a href="geom_jjpointpie.html#cb102-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">text.dist =</span> <span class="fl">0.68</span>,</span>
+<span id="cb102-8"><a href="geom_jjpointpie.html#cb102-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">text.size =</span> <span class="fl">3.5</span>,<span class="at">ratio.digit =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb102-9"><a href="geom_jjpointpie.html#cb102-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb102-10"><a href="geom_jjpointpie.html#cb102-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb102-11"><a href="geom_jjpointpie.html#cb102-11" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_d3</span>() <span class="sc">+</span></span>
+<span id="cb102-12"><a href="geom_jjpointpie.html#cb102-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/94.png" style="width:100.0%" /></p>
+<p>You can also <strong>emphasize one part and add ratio label</strong>:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="geom_jjpointpie.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># seprate part of pie and add percent label</span></span>
+<span id="cb103-2"><a href="geom_jjpointpie.html#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df.long,<span class="fu">aes</span>(<span class="at">x =</span> id,<span class="at">y =</span> gene,<span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb103-3"><a href="geom_jjpointpie.html#cb103-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jjPointPie</span>(<span class="fu">aes</span>(<span class="at">pievar =</span> per,</span>
+<span id="cb103-4"><a href="geom_jjpointpie.html#cb103-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fill =</span> type,</span>
+<span id="cb103-5"><a href="geom_jjpointpie.html#cb103-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">filltype =</span> type),</span>
+<span id="cb103-6"><a href="geom_jjpointpie.html#cb103-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb103-7"><a href="geom_jjpointpie.html#cb103-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">add.text =</span> T,</span>
+<span id="cb103-8"><a href="geom_jjpointpie.html#cb103-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">text.dist =</span> <span class="fl">0.77</span>,</span>
+<span id="cb103-9"><a href="geom_jjpointpie.html#cb103-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">text.size =</span> <span class="fl">3.5</span>,<span class="at">ratio.digit =</span> <span class="dv">0</span>,</span>
+<span id="cb103-10"><a href="geom_jjpointpie.html#cb103-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">explode =</span> <span class="st">&quot;s1&quot;</span>,<span class="at">text.all =</span> F) <span class="sc">+</span></span>
+<span id="cb103-11"><a href="geom_jjpointpie.html#cb103-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb103-12"><a href="geom_jjpointpie.html#cb103-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb103-13"><a href="geom_jjpointpie.html#cb103-13" aria-hidden="true" tabindex="-1"></a>  ggsci<span class="sc">::</span><span class="fu">scale_fill_d3</span>() <span class="sc">+</span></span>
+<span id="cb103-14"><a href="geom_jjpointpie.html#cb103-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div>
+<p><img src="local_images/95.png" style="width:100.0%" /></p>
+</div>
+<div id="end-1" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> End<a href="geom_jjpointpie.html#end-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>More args see:</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="geom_jjpointpie.html#cb100-1" aria-hidden="true" tabindex="-1"></a>?geom_jjPointPie</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="geom_jjpointpie.html#cb104-1" aria-hidden="true" tabindex="-1"></a>?geom_jjPointPie</span></code></pre></div>
 
 </div>
 </div>
